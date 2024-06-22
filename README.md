@@ -3,8 +3,16 @@
 
 def search_insert(l: list,n: int)-> int:
     r=0
-    r_l=[0,len(l)-1]
+    r_l=[0,len(l)-1] # lista de 'cotas' para o indice de n
     while l[r]!= n:
+        if l[(r_l[1]+r_l[0])//2]==n:
+            r=(r_l[1]+r_l[0])//2
+            return r
+        if r_l[0]==r_l[1]:
+            if l[r_l[0]]>n:
+                return r_l[0]
+            else:
+                return r_l[0]+1
         if l[(r_l[1]+r_l[0])//2]>n:
             r_l[1]= (r_l[1]+r_l[0])//2
         if l[(r_l[1]+r_l[0])//2]<n:
@@ -19,16 +27,18 @@ def search_insert(l: list,n: int)-> int:
                     l[r_l[1]]==7
                     como l[(r_l[1]+r_l[0])//2]==l[(r_l[0]+1+r_l[0])//2]==l[r_l[0]]==5
                     como 5<6, aconteceria de o a operação no if anterior criar um loop, onde r_l[0], fica sendo alterado para seu proprio valor 
-                    
+                    assim, eu irei somar 1 para que r_l[0]==r_l[1]
                     """
                 r_l[0]= (r_l[1]+r_l[0])//2 + 1
-            if r_l[0]==r_l[1]:
-                r=
-            
-        if l[(r_l[1]+r_l[0])//2]==n:
-            r=(r_l[1]+r_l[0])//2
-        return r
     
 
 t = [ 0 , 2 , 3 , 4 , 7 ]
-print(search_insert(t,3))
+print(search_insert(t,3)) # 2
+f = [ 0 , 2 ]
+print(search_insert(f,1)) # 1
+v = [ 0 , 2 ]
+print(search_insert(v,3)) # 2
+g = [7]
+print(search_insert(g,3))# 0
+h= [2]
+print(search_insert(h,3))# 1 
