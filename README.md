@@ -61,9 +61,8 @@ def triangulo_pascal(n):
             else:
                 linha_str+= f"{linha_anterior(k-1)+linha_anterior(k)}"
                 esta_linha.append(linha_anterior(k-1)+linha_anterior(k))
-            linha_str+="\n"
-            r+= linha_str
-            linha_anterior=esta_linha
+        r+= f"{linha_str} \n"
+        linha_anterior=esta_linha
     return r
     
     print(triangulo_pascal(3))
