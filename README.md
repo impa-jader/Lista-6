@@ -53,15 +53,16 @@ def triangulo_pascal(n):
     for i in range(n):
         linha_str=""
         esta_linha=[]
-        for k in range(i):
+        for k in range(i+1):
             if k==0 or k==i:
-                linha_str+=1
+                linha_str+=" 1"
                 esta_linha.append(1)
+                continue
             else:
-                linha_str+= f"{linha_anterior[k-1]+linha_anterior[k]}"
+                linha_str+= f" {linha_anterior[k-1]+linha_anterior[k]}"
                 esta_linha.append(linha_anterior[k-1]+linha_anterior[k])
         r+= f"{linha_str} \n"
         linha_anterior=esta_linha
     return r
     
-print(triangulo_pascal(3))
+print(triangulo_pascal(5))
