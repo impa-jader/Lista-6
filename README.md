@@ -42,3 +42,28 @@ g = [7]
 print(search_insert(g,3))# 0
 h= [2]
 print(search_insert(h,3))# 1 
+
+
+
+"""2."""
+
+def triangulo_pascal(n):
+    linha=1
+    linha_anterior=[]
+    r=""
+    for i in range(n):
+        linha_str=""
+        esta_linha=[]
+        for k in range(i):
+            if k==0 or k==i:
+                linha_str+=1
+                esta_linha.append(1)
+            else:
+                linha_str+= f"{linha_anterior(k-1)+linha_anterior(k)}"
+                esta_linha.append(linha_anterior(k-1)+linha_anterior(k))
+            linha_str+="\n"
+            r+= linha_str
+            linha_anterior=esta_linha
+    return r
+    
+    print(triangulo_pascal(3))
