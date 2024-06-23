@@ -71,3 +71,47 @@ print(triangulo_pascal(5))
 A complexidade varia pois o primeiro laço for faz n operações, mas cada operação tem um numero maior de complexidade 
 Assim perceba que a complexidade equivale a um grande a uma serie da forma 1+...+n= (n+1)*n*1/2=(n^2 +n)/2
 Portanto a complexidade é O(n^2)"""
+
+"""3
+a) """
+
+"""b)"""
+
+"""c)"""
+
+"""4"""
+def str_polinomio(pol: str):
+    coisa=""
+    lista_pol=[]
+    for i in pol:
+        if i== "+" or i== "-":
+            lista_pol.append(coisa)
+            coisa=""
+        else:
+            coisa+= i
+    lista_pol.append(coisa)
+    dict={}
+    numeros=[0,1,2,3,4,5,6,7,8,9]
+    for k in lista_pol:
+        grau_str=""
+        coeficiente=1
+        coeficiente_str=""
+        marcador=0 # quando marcador for igual a um é pois ja defunimos o coeficiente
+        grau= int(marcador) # ao inves de botar botar o grau base sendo 0, botei marcador pois, se não tiver x(grau 0) o marcador==0 e se so aparece um x(grau 1) marcador==1 
+        for q in k:
+            if marcador== 0 and q in numeros:
+                coeficiente_str+=q
+            if q not in numeros:
+               marcador=1 
+            if marcador!=0 and q in numeros:
+                grau_str= q
+            if coeficiente_str!="":
+                coeficiente= float(coeficiente_str)
+            if grau_str!="":
+                grau= float(grau_str)
+        dict[grau]= coeficiente
+    return dict
+    
+print(str_polinomio("21x^2+3x+1"))
+
+"""5"""
