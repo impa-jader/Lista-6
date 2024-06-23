@@ -20,7 +20,7 @@ def search_insert(l: list,n: int)-> int:
             if r_l[0]!= (r_l[1]+r_l[0])//2:
                 r_l[0]= (r_l[1]+r_l[0])//2
             else:
-                """A operção // pega o menor inteiro, assim em uma r_l de dois epentos, isso poderia acontecer:
+                """A operação // pega o menor inteiro, assim em uma r_l de dois epentos, isso poderia acontecer:
                     quero: 6
                     r_l[1]=r_l[0]+1
                     l[r_l[0]]==5
