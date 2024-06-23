@@ -45,7 +45,8 @@ print(search_insert(h,3))# 1
 
 
 
-"""2."""
+"""2.
+a)"""
 def triangulo_pascal(n):
     linha=1
     linha_anterior=[]
@@ -66,3 +67,7 @@ def triangulo_pascal(n):
     return r
     
 print(triangulo_pascal(5))
+"""b) 
+A complexidade varia pois o primeiro laço for faz n operações, mas cada operação tem um numero maior de complexidade 
+Assim perceba que a complexidade equivale a um grande a uma serie da forma 1+...+n= (n+1)*n*1/2=(n^2 +n)/2
+Portanto a complexidade é O(n^2)"""
