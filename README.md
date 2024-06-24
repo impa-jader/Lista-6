@@ -75,6 +75,7 @@ Portanto a complexidade é O(n^2)"""
 """3
 a) """
 
+
 """b)"""
 
 """c)"""
@@ -84,13 +85,17 @@ def dict_polinomio(pol: str):
     coisa=""
     lista_pol=[]
     for i in pol:
-        if i== "+" or i== "-":
+        if i== "+":
             lista_pol.append(coisa)
             coisa=""
-        else:
+        if i== "-":
+            lista_pol.append(coisa)
+            coisa="-"
+        elif i!= "+":
             coisa+= i
     lista_pol.append(coisa)
     dict={}
+    numeros_etc=["-","0","1","2","3","4","5","6","7","8","9"]
     numeros=["0","1","2","3","4","5","6","7","8","9"]
     for k in lista_pol:
         grau_str=""
@@ -99,22 +104,24 @@ def dict_polinomio(pol: str):
         marcador=0 # quando marcador for igual a um é pois ja definimos o coeficiente
         grau= 0
         for q in k:
-            
+            if q=="-":
+                coeficiente_str+="-"
             if marcador== 0 and q in numeros:
                 coeficiente_str+=q
-            if q not in numeros:
+            if q not in numeros_etc:
                marcador=1 
             if marcador!=0 and q in numeros:
                 grau_str= q
             grau= int(marcador) # caso o marcador seja 1 e o grau_str não tenha nada então o grau é 1
-            if coeficiente_str!="":
+            if coeficiente_str=="-":
+                coeficiente=-1.0
+            if coeficiente_str!="" and coeficiente_str!="-":
                 coeficiente= float(coeficiente_str)
             if grau_str!="":
                 grau= float(grau_str)
         dict[grau]= coeficiente
     return dict
-    
-print(dict_polinomio("21x^2+3x+1"))
+print(dict_polinomio("21x^2-3x+1"))
 
 
 """5"""
