@@ -80,7 +80,7 @@ a) """
 
 """c)"""
 
-"""4""" # Falta os negativos
+"""4""" 
 def dict_polinomio(pol: str):
     coisa=""
     lista_pol=[]
