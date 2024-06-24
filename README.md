@@ -92,9 +92,7 @@ def str_polinomio(pol: str):
     lista_pol.append(coisa)
     dict={}
     numeros=["0","1","2","3","4","5","6","7","8","9"]
-    # print(lista_pol) teste 
     for k in lista_pol:
-        print(k)
         grau_str=""
         coeficiente=1
         coeficiente_str=""
@@ -113,8 +111,6 @@ def str_polinomio(pol: str):
                 coeficiente= float(coeficiente_str)
             if grau_str!="":
                 grau= float(grau_str)
-        #print(grau)
-        #print(coeficiente)
         dict[grau]= coeficiente
     return dict
     
