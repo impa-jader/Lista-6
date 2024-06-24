@@ -118,3 +118,25 @@ print(dict_polinomio("21x^2+3x+1"))
 
 
 """5"""
+def str_poly(pol: dict)-> str:
+    r=""
+    for k in list(pol.keys()):
+        if k!=0:
+            if pol[k]<0:
+                r+=f"{pol[k]}x"
+            else:
+            r+=f"+{pol[k]}x"
+            if k!=1:
+            r+=f"^{k}"
+        else:
+        if pol[k]<0:
+            r+=str(pol[k])
+        else:
+            r+=f"+{pol[k]}"
+    return r
+p={
+    2: 20,
+    1: -1,
+    0:3
+}
+print(str_poly(p))
