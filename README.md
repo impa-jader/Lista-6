@@ -79,8 +79,8 @@ a) """
 
 """c)"""
 
-"""4"""
-def str_polinomio(pol: str):
+"""4""" # Falta os negativos
+def dict_polinomio(pol: str):
     coisa=""
     lista_pol=[]
     for i in pol:
@@ -114,5 +114,7 @@ def str_polinomio(pol: str):
         dict[grau]= coeficiente
     return dict
     
-print(str_polinomio("21x^2+3x+1"))
+print(dict_polinomio("21x^2+3x+1"))
+
+
 """5"""
