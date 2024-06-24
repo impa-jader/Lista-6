@@ -74,7 +74,50 @@ Portanto a complexidade é O(n^2)"""
 
 """3
 a) """
+class node:
+    def __init__(self, algo):
+        self.aqui= algo
+        self.ali= None
 
+class Linked_list:
+    def __init__(self):
+        self.head = None
+        self.length=0
+        
+    def ad(self, novo):
+        n=node(novo)
+        if self.head==None:
+            self.head= n
+        else:
+            pointer= self.head
+            while pointer.ali!= None:
+                pointer = pointer.ali
+            pointer.ali= n
+            """ Adiciona elementos no final da lista"""
+        self.length+=1
+    
+    def __str__(self):
+        if self.head is None:
+            return "HeadNone" 
+        r= str(self.head.aqui)
+        point= self.head
+        while point.ali!=None:
+            r+= " -> " + str(point.ali.aqui)
+            point= point.ali
+        return r
+
+        
+lista= Linked_list()
+lista.ad(1)
+lista.ad(2)
+lista.ad(3)
+lista.ad(4)
+lista.ad(5)
+lista.ad(6)
+lista.ad(7)
+lista.ad(8)
+print(lista)  
+print(lista.length)
 
 """b)"""
 
