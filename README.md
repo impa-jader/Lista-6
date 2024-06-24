@@ -91,7 +91,7 @@ def str_polinomio(pol: str):
             coisa+= i
     lista_pol.append(coisa)
     dict={}
-    numeros=[0,1,2,3,4,5,6,7,8,9]
+    numeros=["0","1","2","3","4","5","6","7","8","9"]
     # print(lista_pol) teste 
     for k in lista_pol:
         grau_str=""
